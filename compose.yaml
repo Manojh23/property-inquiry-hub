@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: postgres:17
+    ports: ["127.0.0.1:5432:5432"]
+    environment:
+      POSTGRES_USER: property
+      POSTGRES_PASSWORD: property
+      POSTGRES_DB: property_hub
+    volumes: [property_data:/var/lib/postgresql/data]
+volumes:
+  property_data:

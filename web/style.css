@@ -1,0 +1,276 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #142f29;
+  background: #f3f2e9;
+  font-synthesis: none;
+  --ink: #14362c;
+  --line: #ccdbd0;
+  --paper: #fffef8;
+  --accent: #266049;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+header {
+  background: var(--ink);
+  color: white;
+  padding: 1rem max(5vw, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+nav,
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+}
+header button {
+  background: transparent;
+  color: white;
+  border-color: #709286;
+}
+header button[aria-pressed="true"] {
+  background: white;
+  color: var(--ink);
+}
+main {
+  max-width: 1150px;
+  margin: auto;
+  padding: 2rem max(3vw, 1rem) 4rem;
+}
+footer {
+  text-align: center;
+  color: #39564d;
+  padding: 0 1rem 2rem;
+  font-size: 0.88rem;
+}
+h1,
+h2,
+h3 {
+  font-family: Georgia, serif;
+  line-height: 1.08;
+}
+h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  margin: 0.45rem 0 0.65rem;
+}
+h2 {
+  margin: 0.4rem 0 1rem;
+  font-size: 1.8rem;
+}
+h3 {
+  margin: 0.15rem 0 0.4rem;
+  font-size: 1.45rem;
+}
+p {
+  line-height: 1.55;
+}
+.intro {
+  padding: 2rem 0 1.75rem;
+}
+.compact h1 {
+  font-size: clamp(2.3rem, 5vw, 3.7rem);
+}
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #396454;
+}
+.cards,
+.split {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.split {
+  grid-template-columns: 1fr 1.2fr;
+}
+.panel,
+.property {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  padding: 1.35rem;
+  text-align: left;
+}
+.property {
+  display: grid;
+  gap: 0.5rem;
+}
+.property strong {
+  font:
+    700 1.4rem Georgia,
+    serif;
+}
+.property.selected {
+  border: 2px solid var(--accent);
+  background: #e2eee4;
+}
+.property-copy {
+  background: #e5ede3;
+}
+.property-copy h2 {
+  font-size: clamp(1.8rem, 4vw, 3.3rem);
+  margin-top: 1rem;
+}
+.signin {
+  max-width: 520px;
+  margin: 2rem auto;
+}
+.signin h1 {
+  font-size: 2.65rem;
+}
+form {
+  display: grid;
+  gap: 1rem;
+}
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #9bb1a4;
+  border-radius: 6px;
+  background: white;
+}
+textarea {
+  resize: vertical;
+}
+button {
+  cursor: pointer;
+  border-radius: 7px;
+  border: 1px solid #a5b8ac;
+  background: white;
+  padding: 0.6rem 0.85rem;
+  font-weight: 650;
+}
+button[aria-pressed="true"],
+button.primary {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+:focus-visible {
+  outline: 3px solid #aa571c;
+  outline-offset: 3px;
+}
+.inquiry {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.inquiry:last-child {
+  border: 0;
+}
+.inquiry-actions {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  min-width: 12rem;
+}
+.badge {
+  font-size: 0.9rem;
+  color: #234d3b;
+}
+.table-wrap {
+  overflow: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+th,
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+[role="alert"] {
+  color: #8a2715;
+}
+[role="status"] {
+  color: #23583e;
+}
+@media (max-width: 760px) {
+  .cards,
+  .split {
+    grid-template-columns: 1fr;
+  }
+  .inquiry {
+    display: grid;
+  }
+  .inquiry-actions {
+    min-width: 0;
+  }
+  header {
+    align-items: flex-start;
+  }
+  .property {
+    padding: 1rem;
+  }
+  .intro {
+    padding-top: 1rem;
+  }
+}
+.follow-up-summary {
+  color: #396454;
+  font-size: 0.9rem;
+}
+.follow-up {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+  margin: 0.7rem 0;
+}
+.follow-up button {
+  justify-self: start;
+}
+.activity-toggle {
+  font-size: 0.85rem;
+}
+.activity {
+  padding-left: 1.4rem;
+  font-size: 0.9rem;
+}
+.activity li {
+  margin: 0.45rem 0;
+}
+.activity small {
+  display: block;
+  color: #456155;
+}
+@media (max-width: 760px) {
+  .follow-up {
+    grid-template-columns: 1fr;
+  }
+}
